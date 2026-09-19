@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="./profile/README.md">English</a> | <a href="./profile/README.zh.md">简体中文</a>
+  <a href="./README.md">English</a> | <a href="./README.zh.md">简体中文</a>
 </p>
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
