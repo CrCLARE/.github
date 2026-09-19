@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>隐私政策 — CrCLARE 工作室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fafcfc;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* 蓝白渐变背景 */
+    .bg-aurora {
+      position: fixed; inset: 0; z-index: -2;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(147, 197, 253, 0.3), transparent 50%),
+        linear-gradient(135deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 70%, #bfdbfe 100%);
+      filter: blur(20px);
+    }
+
+    /* 宇宙星轨 */
+    .bg-stars {
+      position: fixed; inset: 0; z-index: -1;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 40% 60%, rgba(59, 130, 246, 0.1), transparent),
+        radial-gradient(1px 1px at 70% 30%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(59, 130, 246, 0.1), transparent);
+      background-size: 200px 200px;
+    }
+
+    /* 森系毛玻璃卡片 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+    }
+
+    /* 正文富文本排版优化 */
+    .privacy-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .privacy-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+    .privacy-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .privacy-content li {
+      margin-bottom: 0.5rem;
+    }
+    .privacy-content a {
+      color: #3b82f6;
+      text-decoration: none;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+    .privacy-content a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-aurora"></div>
+  <div class="bg-stars"></div>
+
+  <!-- 极简顶栏 -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-white/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2.5 font-extrabold text-[17px] tracking-tight text-slate-800">
+        <img src="logo.png" alt="CrCLARE Studio Logo" class="h-7 w-auto" onerror="this.style.display='none';">
+        <span>CrCLARE工作室</span>
+      </a>
+      <a href="/" class="text-[14px] font-medium text-slate-500 hover:text-brand-500 transition-colors">返回首页</a>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <div class="glass-card p-8 md:p-14">
+      <h1 class="text-[32px] md:text-[40px] font-extrabold text-slate-900 mb-2 text-center">隐私政策声明</h1>
+      <p class="text-center text-slate-400 mb-10 text-[14px]">最后更新：2026年9月19日</p>
+
+      <div class="privacy-content">
+        <p>欢迎访问 CrCLARE 工作室站点。我们致力于保护您的隐私，并尽可能保持数据处理透明。以下是我们的具体声明：</p>
+
+        <h2>1. 开源与可审计性</h2>
+        <p>除 Pass 服务外，本工作室所有站点均在 GitHub 仓库公开，代码随时可供社区审计。我们不隐藏任何数据处理逻辑，您可以自行审查源码以验证本声明的真实性。</p>
+
+        <h2>2. 数据收集与使用</h2>
+        <p>本工作室站点（Pass 除外）均为纯静态站点。我们不会主动记录或收集任何您的个人身份信息。</p>
+        <p>唯一的例外是：当您使用 Twikoo 评论系统时，您主动输入的邮箱、昵称、网站地址，以及发送评论时系统自动获取的 IP 地址，会被存储于 MongoDB 数据库中。这些数据仅用于展示您的评论及防止垃圾留言。</p>
+        <p>为了保障评论系统的安全与纯净，我们在评论流程中接入了以下第三方服务：</p>
+        <ul>
+          <li><strong>极验（GeeTest）</strong>：用于人机验证（设备指纹），防止机器人自动发布垃圾评论。在您进行评论验证时，极验会收集您的设备信息、网络信息等，用于生成设备指纹，以区分真实用户与自动化脚本。</li>
+          <li><strong>Akismet</strong>：用于反垃圾评论过滤。您提交的评论内容、评论者姓名、邮箱地址、IP 地址及评论者URL会被发送至 Akismet 服务进行检测，以判断是否为垃圾评论。Akismet 不会将这些数据用于其他目的，且数据保留期通常在两周至九十天之间。</li>
+        </ul>
+        <p><strong>特别声明：</strong>对于使用 Chronos Seal 项目的用户，您的加密主种子（Seed）仅在本地生成，绝不会上传至我们的任何服务器，我们无权也无法获取您的加密密钥。</p>
+
+        <h2>3. 基础设施与托管服务</h2>
+        <p>除 Pass 服务外，本工作室旗下的站点与后端服务，按业务类型分布依托于以下基础设施平台，均符合业界安全标准：</p>
+        <ul>
+          <li><strong>GitHub</strong>：所有站点的代码托管与版本控制。</li>
+          <li><strong>GitHub Pages</strong>：承载工作室主页与文档站点的静态托管。</li>
+          <li><strong>Vercel</strong>：承载博客、评论系统以及 Chronos Seal 盲代理服务。评论系统与代理服务均在 Serverless 无服务器函数中运行。</li>
+          <li><strong>Cloudflare Pages</strong>：承载图床与网盘。</li>
+          <li><strong>Cloudflare</strong>：统一负责所有站点的 DNS 解析、CDN 加速与 WAF 安全防护。</li>
+        </ul>
+        <p>上述平台会在服务器层面自动处理访问流量日志（如 IP 地址、访问时间、请求路径等）。这些日志仅用于安全防护与访问统计，各平台的具体数据处理受其各自隐私政策约束。</p>
+
+        <h2>4. Cookie 与第三方分析</h2>
+        <p>我们部分站点使用 Google Analytics 进行匿名流量分析。该服务受 Google 隐私政策保护。若未来我们面向特定合规地区（如欧盟）启用严格的 Cookie 同意管理，我们将在此更新相关说明。</p>
+
+        <h2>5. Pass 服务</h2>
+        <p>如果您使用 CrCLARE 旗下的 Pass 服务，由于涉及账号认证，具体的数据处理与隐私保护条款，请以 Logto 隐私政策为准。</p>
+
+        <h2>6. 数据共享与披露</h2>
+        <p>我们承诺不会与任何第三方个人、公司或组织分享、出售或披露您的个人信息。为了提供上述服务，我们接入了以下第三方基础设施与工具，其数据处理受各自隐私政策约束：</p>
+        <ul>
+          <li><strong>MongoDB（评论系统数据库）</strong>：<a href="https://www.mongodb.com/legal/privacy/privacy-policy" target="_blank" rel="noopener">https://www.mongodb.com/legal/privacy/privacy-policy</a></li>
+          <li><strong>Logto（Pass 服务认证）</strong>：<a href="https://logto.io/terms/privacy-policy" target="_blank" rel="noopener">https://logto.io/terms/privacy-policy</a></li>
+          <li><strong>极验（人机验证）</strong>：<a href="https://www2.geetest.com/Private/fingerprint" target="_blank" rel="noopener">https://www2.geetest.com/Private/fingerprint</a></li>
+          <li><strong>Akismet（反垃圾评论）</strong>：<a href="https://akismet.com/privacy/" target="_blank" rel="noopener">https://akismet.com/privacy/</a></li>
+          <li><strong>Google Analytics（匿名流量分析）</strong>：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+          <li><strong>GitHub（代码托管，Pages 服务承载主页与文档）</strong>：<a href="https://docs.github.com/zh/site-policy/privacy-policies" target="_blank" rel="noopener">https://docs.github.com/zh/site-policy/privacy-policies</a></li>
+          <li><strong>Vercel（博客、评论与盲代理托管）</strong>：<a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener">https://vercel.com/legal/privacy-notice</a></li>
+          <li><strong>Cloudflare Pages（图床与网盘托管）</strong>：<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare.com/privacypolicy/</a></li>
+          <li><strong>Cloudflare（CDN 与安全防护）</strong>：<a href="https://www.cloudflare-cn.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare-cn.com/privacypolicy/</a></li>
+        </ul>
+        <p>我们采用行业标准的安全措施保护数据，但没有任何系统是绝对安全的，我们会尽最大努力防范数据泄露。</p>
+
+        <h2>7. 数据留存与您的权利</h2>
+        <p>评论数据将被留存以供展示，直至您主动要求删除。您有权随时通过 <a href="mailto:support@crclare.top">support@crclare.top</a> 向我们申请导出或彻底删除您的评论记录及关联的 IP 信息。</p>
+
+        <h2>8. 联系我们</h2>
+        <p>如有任何关于隐私政策的疑问、安全漏洞报告或数据审计需求，请联系：<a href="mailto:support@crclare.top">support@crclare.top</a>。</p>
+        
+        <p class="mt-12 text-sm text-slate-400 text-center border-t border-slate-200/60 pt-6">CrCLARE 工作室 · 奔赴顶峰，保持热爱</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // 保持页面轻量，无需额外脚本
+  </script>
+</body>
+</html>

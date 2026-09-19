@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie 协议 — CrCLARE 工作室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fafcfc;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* 蓝白渐变背景 */
+    .bg-aurora {
+      position: fixed; inset: 0; z-index: -2;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(147, 197, 253, 0.3), transparent 50%),
+        linear-gradient(135deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 70%, #bfdbfe 100%);
+      filter: blur(20px);
+    }
+
+    /* 宇宙星轨 */
+    .bg-stars {
+      position: fixed; inset: 0; z-index: -1;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 40% 60%, rgba(59, 130, 246, 0.1), transparent),
+        radial-gradient(1px 1px at 70% 30%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(59, 130, 246, 0.1), transparent);
+      background-size: 200px 200px;
+    }
+
+    /* 森系毛玻璃卡片 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+    }
+
+    /* 正文富文本排版优化 */
+    .cookie-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .cookie-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+    .cookie-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .cookie-content li {
+      margin-bottom: 0.5rem;
+    }
+    .cookie-content a {
+      color: #3b82f6;
+      text-decoration: none;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+    .cookie-content a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    .cert-box {
+      background: rgba(59, 130, 246, 0.06);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .cert-box p {
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+    .cert-box strong {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-aurora"></div>
+  <div class="bg-stars"></div>
+
+  <!-- 极简顶栏 -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-white/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2.5 font-extrabold text-[17px] tracking-tight text-slate-800">
+        <img src="logo.png" alt="CrCLARE Studio Logo" class="h-7 w-auto" onerror="this.style.display='none';">
+        <span>CrCLARE工作室</span>
+      </a>
+      <a href="/" class="text-[14px] font-medium text-slate-500 hover:text-brand-500 transition-colors">返回首页</a>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <div class="glass-card p-8 md:p-14">
+      <h1 class="text-[32px] md:text-[40px] font-extrabold text-slate-900 mb-2 text-center">Cookie 协议</h1>
+      <p class="text-center text-slate-400 mb-10 text-[14px]">最后更新：2026年9月19日</p>
+
+      <div class="cookie-content">
+        <p>为了确保 CrCLARE Studio 旗下站点的正常运行，并为您提供更流畅的浏览体验，我们会在您的设备上存储一些名为 Cookie 的小型文本文件。本协议将向您说明我们如何使用 Cookie 以及您如何管理它们。</p>
+
+        <h2>1. 什么是 Cookie？</h2>
+        <p>Cookie 是网站存储在您浏览器中的小型数据文件。它们通常用于记住您的偏好设置、保持登录状态、分析网站流量等。Cookie 本身不包含任何可以直接识别您个人身份的信息。</p>
+
+        <h2>2. 我们如何使用 Cookie？</h2>
+        <p>CrCLARE Studio 的站点主要依赖以下类型的 Cookie：</p>
+        <ul>
+          <li><strong>必要 Cookie（Essential Cookies）：</strong>这些 Cookie 是站点正常运行的基础。例如，Cloudflare 安全验证（防 CC 攻击、WAF 防护）需要在您的浏览器中设置临时 Cookie 以验证您是否为真实用户。如果您禁用这些 Cookie，站点可能无法正常访问。</li>
+          <li><strong>功能性 Cookie（Functional Cookies）：</strong>当您使用 Twikoo 评论系统时，我们会使用 Cookie 记录您的昵称、邮箱和网站地址，以便您下次发表评论时自动填充。这些信息由您主动输入，且仅存储在您的浏览器和评论数据库中。</li>
+          <li><strong>分析性 Cookie（Analytics Cookies）：</strong>我们使用 Google Analytics 进行匿名流量分析。它会设置 Cookie 以区分不同访问者，帮助我们统计页面访问量、停留时间等数据。这些数据是匿名的，无法追溯到具体个人。</li>
+        </ul>
+
+        <h2>3. 第三方 Cookie</h2>
+        <p>我们在部分站点中接入了第三方服务，这些服务可能会在您的浏览器中设置各自的 Cookie。我们无法直接控制这些 Cookie，相关数据处理受其各自的隐私政策约束：</p>
+        <ul>
+          <li><strong>Google Analytics</strong>：用于匿名流量分析。您可以查阅 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私政策</a>。</li>
+          <li><strong>Cloudflare</strong>：用于 DNS 解析、CDN 加速与 WAF 安全防护。您可以查阅 <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare 隐私政策</a>。</li>
+          <li><strong>Twikoo 评论系统</strong>：用于展示评论及防止垃圾留言。其数据存储于 MongoDB 数据库中。</li>
+        </ul>
+
+        <h2>4. 如何管理您的 Cookie？</h2>
+        <p>您有权随时管理或删除您的 Cookie。您可以通过浏览器的设置来拒绝或删除 Cookie。以下是主流浏览器的设置入口：</p>
+        <ul>
+          <li>Google Chrome：设置 → 隐私和安全 → 网站设置 → Cookie 及其他网站数据</li>
+          <li>Mozilla Firefox：选项 → 隐私与安全 → Cookie 和网站数据</li>
+          <li>Microsoft Edge：设置 → Cookie 和网站权限 → 管理和删除 Cookie 和网站数据</li>
+          <li>Apple Safari：偏好设置 → 隐私 → 管理网站数据</li>
+        </ul>
+        <p>请注意：如果您选择禁用或删除 Cookie，部分站点功能可能无法正常使用（例如评论系统的自动填充或安全验证）。</p>
+
+        <h2>5. 政策更新</h2>
+        <p>我们可能会适时更新本 Cookie 协议，以反映我们实际使用的技术或法律要求的变更。任何更新都会在本页面发布，并更新“最后更新”日期。建议您定期查看本页面以了解最新信息。</p>
+
+        <h2>6. 联系我们</h2>
+        <p>如果您对本 Cookie 协议有任何疑问，请联系：<a href="mailto:hi@crclare.top">hi@crclare.top</a></p>
+        
+        <p class="mt-12 text-sm text-slate-400 text-center border-t border-slate-200/60 pt-6">CrCLARE Studio · 奔赴顶峰，保持热爱</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

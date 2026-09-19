@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>版权与许可声明 — CrCLARE 工作室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fafcfc;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* 蓝白渐变背景 */
+    .bg-aurora {
+      position: fixed; inset: 0; z-index: -2;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(147, 197, 253, 0.3), transparent 50%),
+        linear-gradient(135deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 70%, #bfdbfe 100%);
+      filter: blur(20px);
+    }
+
+    /* 宇宙星轨 */
+    .bg-stars {
+      position: fixed; inset: 0; z-index: -1;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 40% 60%, rgba(59, 130, 246, 0.1), transparent),
+        radial-gradient(1px 1px at 70% 30%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(59, 130, 246, 0.1), transparent);
+      background-size: 200px 200px;
+    }
+
+    /* 森系毛玻璃卡片 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+    }
+
+    /* 正文富文本排版优化 */
+    .copyright-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .copyright-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+    .copyright-content ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .copyright-content li {
+      margin-bottom: 0.5rem;
+    }
+    .copyright-content a {
+      color: #3b82f6;
+      text-decoration: none;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+    .copyright-content a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    .cert-box {
+      background: rgba(59, 130, 246, 0.06);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .cert-box p {
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+    .cert-box strong {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-aurora"></div>
+  <div class="bg-stars"></div>
+
+  <!-- 极简顶栏 -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-white/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2.5 font-extrabold text-[17px] tracking-tight text-slate-800">
+        <img src="logo.png" alt="CrCLARE Studio Logo" class="h-7 w-auto" onerror="this.style.display='none';">
+        <span>CrCLARE工作室</span>
+      </a>
+      <a href="/" class="text-[14px] font-medium text-slate-500 hover:text-brand-500 transition-colors">返回首页</a>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <div class="glass-card p-8 md:p-14">
+      <h1 class="text-[32px] md:text-[40px] font-extrabold text-slate-900 mb-2 text-center">版权与许可声明</h1>
+      <p class="text-center text-slate-400 mb-10 text-[14px]">最后更新：2026年9月19日</p>
+
+      <div class="copyright-content">
+        <p>CrCLARE Studio 尊重并保护知识产权。为明确各类作品的使用边界，特此发布版权与许可声明。任何个人或组织在使用本工作室的产出时，请务必遵守相应许可条款。</p>
+
+        <h2>1. 开源项目与软件（Chronos Seal 等）</h2>
+        <p>除商业版（Pro）外，CrCLARE Studio 的开源项目（如 Chronos Seal Basic）采用 <strong>MIT 许可证</strong>，并附带 <strong>NOTICE 声明</strong>。</p>
+        <ul>
+          <li>✅ 允许将本项目集成到商业或免费游戏中，闭源售卖你的游戏。</li>
+          <li>✅ 允许修改源码用于你自己的项目，并在遵守 MIT 协议的前提下进行分发。</li>
+          <li>❌ 严禁将源码或编译产物（<code>.node</code> 文件）作为独立商品直接售卖。</li>
+          <li>❌ 严禁删除或隐藏版权声明后销售软件本体。</li>
+        </ul>
+        <p><strong>简单来说：你可以卖用了 Chronos Seal 的游戏，但不能直接卖 Chronos Seal 本身。</strong></p>
+
+        <h2>2. 商业版与私有协议（Chronos Seal Pro）</h2>
+        <p>Chronos Seal Pro 版本采用<strong>私有商业协议</strong>，不适用 MIT 开源协议。</p>
+        <ul>
+          <li>Pro 版授权为<strong>个人/工作室买断制</strong>，授权仅限于购买者名下游戏使用。</li>
+          <li>在遵守授权协议的前提下，可进行二次修改（魔改）用于自身游戏开发。</li>
+          <li>严禁将 Pro 版源码（含修改后版本）进行二次分发、转售或公开上传至公共代码托管平台。</li>
+          <li>具体授权条款以官方购买面板展示的服务协议为准。</li>
+        </ul>
+
+        <h2>3. 博客文章与文档内容</h2>
+        <p>CrCLARE Studio 官方博客（blog.crclare.top）及文档站（docs.crclare.top）的原创文字内容，除特殊声明外，均采用 <strong>CC BY 4.0（知识共享 4.0 国际许可协议）</strong> 进行许可。</p>
+        <ul>
+          <li>✅ 允许转载、复制、分发和演绎，但必须<strong>署名</strong>（注明作者为 CLARE-XHL / CrCLARE Studio）并提供原文链接。</li>
+          <li>✅ 允许用于商业目的。</li>
+        </ul>
+
+        <h2>4. 原创游戏与美术资产（Going Future 系列）</h2>
+        <p>《Going Future》系列游戏及其相关美术素材、音乐音效、剧情文本等，均已进行国家版权局登记，受《中华人民共和国著作权法》及相关国际条约保护。</p>
+
+        <div class="cert-box">
+          <p><strong>🎨 美术作品登记</strong></p>
+          <p>作品名称：Going Future 作品集 Part 1</p>
+          <p>登记号：辽作登字-2026-F-00013075</p>
+          <p>登记机构：辽宁省版权局</p>
+        </div>
+
+        <div class="cert-box">
+          <p><strong>💻 计算机软件著作权登记</strong></p>
+          <p>软件名称：Going Future Part 0.5 RPG游戏软件 V1.0</p>
+          <p>证书号：软著登字第17865385号</p>
+          <p>登记号：2026SR0651104</p>
+          <p>登记机构：中国版权保护中心</p>
+        </div>
+
+        <p><strong>未经 CrCLARE Studio 或著作权人（辛皓伦）书面授权，严禁将上述游戏素材、代码、美术资源用于二次分发的换皮游戏、商业售卖或恶意拆解。</strong></p>
+
+        <h2>5. 二次创作（二创）与同人作品</h2>
+        <p>CrCLARE Studio <strong>允许并鼓励</strong>基于我们旗下作品（如《Going Future》、《宇宙乡·纪》等）的二次创作。我们珍视每一位创作者的热情，但也希望大家共同维护良好的创作环境。参与二创即代表您同意以下约定：</p>
+        <ul>
+          <li>✅ <strong>允许并鼓励</strong>：同人绘画、同人小说、音乐改编、视频剪辑、游戏模组（Mod）等非商业性的粉丝创作。</li>
+          <li>❌ <strong>严禁商用</strong>：禁止将二创作品用于任何直接或间接的商业盈利行为（包括但不限于：直接售卖、开通付费墙、参与商业广告、未经授权的众筹等）。</li>
+          <li>❌ <strong>严禁丑化与扭曲</strong>：禁止在任何平台制作、发布涉及丑化、扭曲、侮辱原作角色、恶意破坏原作世界观或包含极端不适宜内容的二创作品。</li>
+          <li>⚠️ <strong>署名与权利归属</strong>：发布二创作品时，请务必在显著位置注明原作来源（CrCLARE Studio / 辛皓伦）。二创作者保留其独立创作部分的版权，但不得将原作的元素（角色、设定等）用于商标注册或据为己有。</li>
+        </ul>
+        <p><strong>我们保留对违反上述规定的二创作品进行投诉、要求下架及追究法律责任的权利。</strong></p>
+
+        <h2>6. 品牌标识（Logo）授权声明</h2>
+        <p>CrCLARE Studio 的官方品牌 Logo，已通过正规版权服务平台获得合法授权。具体授权信息如下：</p>
+        <ul>
+          <li><strong>授权方</strong>：北京生橙视觉科技有限公司（标智客）</li>
+          <li><strong>被授权人</strong>：辛皓伦（CLARE-XHL / CrCLARE Studio）</li>
+          <li><strong>授权期限</strong>：自2026年03月15日起，<strong>永久有效</strong>。</li>
+          <li><strong>授权范围</strong>：可在全球范围内用于产品、服务、网站、移动应用、博客文章、社交媒体、广告、电商、行销活动等商业或非商业用途。</li>
+        </ul>
+        <p><strong>声明：</strong>本 Logo 授权仅限 CrCLARE Studio 自身使用，严禁任何第三方对本 Logo 进行复制、倒卖、冒充官方或进行二次转授权。任何因第三方擅自使用该 Logo 导致的纠纷，均与 CrCLARE Studio 及原授权方无关。</p>
+
+        <h2>7. 侵权举报与联系方式</h2>
+        <p>如果您发现有第三方违规使用、倒卖 CrCLARE Studio 的产出，欢迎向我们举报。</p>
+        <p>版权投诉、授权合作或法律咨询，请联系：<a href="mailto:hi@crclare.top">hi@crclare.top</a></p>
+        
+        <p class="mt-12 text-sm text-slate-400 text-center border-t border-slate-200/60 pt-6">CrCLARE Studio · 奔赴顶峰，保持热爱</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

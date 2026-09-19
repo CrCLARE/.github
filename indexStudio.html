@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrCLARE 工作室 — 奔赴顶峰，保持热爱</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fafcfc;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* 蓝白渐变背景 */
+    .bg-aurora {
+      position: fixed; inset: 0; z-index: -2;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(147, 197, 253, 0.3), transparent 50%),
+        linear-gradient(135deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 70%, #bfdbfe 100%);
+      filter: blur(20px);
+    }
+
+    /* 宇宙星轨 */
+    .bg-stars {
+      position: fixed; inset: 0; z-index: -1;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 40% 60%, rgba(59, 130, 246, 0.1), transparent),
+        radial-gradient(1px 1px at 70% 30%, rgba(59, 130, 246, 0.15), transparent),
+        radial-gradient(1px 1px at 90% 80%, rgba(59, 130, 246, 0.1), transparent);
+      background-size: 200px 200px;
+    }
+
+    /* 森系毛玻璃卡片 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 56px -10px rgba(15, 23, 42, 0.08), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    /* 标题纯色，避免看不清 */
+    .text-primary { color: #0f172a; }
+
+    /* 打字机光标 */
+    .typing-cursor {
+      display: inline-block; width: 3px; background-color: #3b82f6;
+      margin-left: 6px; animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* 状态灯 */
+    .status-indicator { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.8); border: 1px solid rgba(226, 232, 240, 0.8); transition: transform 0.2s; text-decoration: none; }
+    .status-indicator:hover { transform: scale(1.03); }
+    .status-indicator .dot { width: 8px; height: 8px; border-radius: 9999px; }
+    .status-loading .dot { background-color: #94a3b8; animation: pulse 2s infinite; }
+    .status-ok .dot { background-color: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+    .status-partial .dot { background-color: #f59e0b; box-shadow: 0 0 8px rgba(245, 158, 11, 0.5); }
+    .status-error .dot { background-color: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="bg-aurora"></div>
+  <div class="bg-stars"></div>
+
+  <!-- 极简顶栏（Logo + 文字指向 GitHub 主页） -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/70 border-b border-white/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="https://github.com/CLARE-XHL" target="_blank" class="flex items-center gap-2.5 font-extrabold text-[17px] tracking-tight text-slate-800">
+        <img src="logo.png" alt="CrCLARE Studio Logo" class="h-7 w-auto" onerror="this.style.display='none';">
+        <span>CrCLARE工作室</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-28 pb-20 md:pt-40 md:pb-28">
+    <div class="max-w-3xl">
+      <div class="mb-4 text-[13px] font-semibold tracking-[0.18em] text-brand-500 uppercase">
+        Independent Developer · CrCLARE Studio
+      </div>
+      <h1 class="text-[clamp(2.2rem,5vw,3.4rem)] font-extrabold leading-[1.15] tracking-tight text-primary">
+        <span id="typingText"></span><span class="typing-cursor">&nbsp;</span>
+      </h1>
+      <p class="mt-6 text-[17px] leading-relaxed text-slate-600">
+        我们构建底层的安全工具，也书写跨越千年的宇宙史诗。<br>
+        在晨雾中寻找灵感，在星轨下构建世界。
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="https://github.com/CrCLARE" target="_blank" class="px-6 py-3 bg-slate-900 text-white rounded-xl font-semibold text-[15px] hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/10">
+          探索 GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目 -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-24">
+    <div class="text-center mb-12">
+      <h2 class="text-[28px] font-bold text-slate-900">正在构建的世界</h2>
+      <p class="mt-2 text-slate-500">从防破解工具，到跨越千年的宇宙</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="text-[18px] font-semibold text-slate-800 mb-2">Chronos Seal</h3>
+        <p class="text-[14px] leading-relaxed text-slate-500 flex-grow">
+          RM MV/MZ 运行时保护方案。以时间为封印，行为作密钥，轻量化完整性校验，守护独立游戏首发窗口期。
+        </p>
+        <a href="https://github.com/CrCLARE/Chronos-Seal" target="_blank" class="mt-5 text-[14px] font-semibold text-brand-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+          查看仓库 <span>→</span>
+        </a>
+      </div>
+      <div class="glass-card p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="text-[18px] font-semibold text-slate-800 mb-2">Going Future</h3>
+        <p class="text-[14px] leading-relaxed text-slate-500 flex-grow">
+          独立游戏制作中。在宇宙乡的废墟之上，少年们集结前行，为了自由与正义，在星海间留下属于他们的传说。
+        </p>
+        <span class="mt-5 text-[14px] font-semibold text-slate-400 inline-flex items-center gap-1 cursor-not-allowed">敬请期待</span>
+      </div>
+      <div class="glass-card p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center mb-5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="text-[18px] font-semibold text-slate-800 mb-2">《宇宙乡·纪》</h3>
+        <p class="text-[14px] leading-relaxed text-slate-500 flex-grow">
+          原创长篇小说。一段跨越数千年的编年史，关于克隆、灵能、记忆提取，以及那些在霞光中倒下的英雄与长存的信念。
+        </p>
+        <span class="mt-5 text-[14px] font-semibold text-slate-400 inline-flex items-center gap-1 cursor-not-allowed">创作中</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成员 -->
+  <section id="members" class="max-w-6xl mx-auto px-6 py-20 scroll-mt-24">
+    <div class="text-center mb-12">
+      <h2 class="text-[28px] font-bold text-slate-900">工作室成员</h2>
+      <p class="mt-2 text-slate-500">基于热爱，来去自由的创作者们</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <a href="https://github.com/CLARE-XHL" target="_blank" class="glass-card p-8 text-center flex flex-col items-center hover:border-brand-300 transition-colors">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-brand-400 to-emerald-400 p-1 mb-4">
+          <img src="avatar.png" alt="CLARE" class="w-full h-full rounded-full object-cover bg-white" onerror="this.src='https://avatars.githubusercontent.com/u/1204189977?v=4'">
+        </div>
+        <h3 class="text-[18px] font-bold text-slate-800">CLARE</h3>
+        <p class="text-[13px] text-brand-500 font-medium mt-1">创始人 · 独立开发者</p>
+        <p class="text-[14px] text-slate-500 mt-3">负责 Chronos Seal 底层架构、Tauri GUI、以及《宇宙乡·纪》的全部创作。</p>
+      </a>
+      <div class="glass-card p-8 text-center flex flex-col items-center justify-center border-dashed border-2 border-slate-300 bg-transparent hover:bg-white/50 transition-colors cursor-pointer">
+        <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <h3 class="text-[16px] font-semibold text-slate-600">来去自由</h3>
+        <p class="text-[13px] text-slate-400 mt-2">无需固定身份，只需一腔热爱</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="max-w-4xl mx-auto px-6 py-20 text-center scroll-mt-24">
+    <div class="glass-card p-10 md:p-16 inline-block w-full">
+      <h2 class="text-[28px] font-bold text-slate-900 mb-6">关于 CrCLARE Studio</h2>
+      <p class="text-[17px] leading-relaxed text-slate-600 mb-8 max-w-2xl mx-auto">
+        CrCLARE Studio 是一个基于纯粹热爱的、不设固定成员、来去自由的创作团体。<br>
+        我们相信技术应当拥抱创造力，而非成为门槛。从底层的二进制安全，到跨越千年的文字叙事，我们永远站在独立创作者这一边。
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-[14px]">
+        <span class="px-4 py-2 rounded-full bg-brand-50 text-brand-600 font-medium border border-brand-100">Go for it.</span>
+        <span class="px-4 py-2 rounded-full bg-emerald-50 text-emerald-600 font-medium border border-emerald-100">奔赴顶峰，保持热爱</span>
+      </div>
+      <p class="mt-8 text-[15px] font-semibold text-slate-800">
+        "Create Wonderful Code, Build A Wonderful World."
+      </p>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="border-t border-slate-200/60 mt-12 py-12 bg-white/50 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 text-center text-[13px] text-slate-500">
+      <p class="text-[15px] font-semibold text-slate-800">© <span id="copyrightYear"></span> CrCLARE Studio</p>
+      <p class="mt-1 text-slate-400">奔赴顶峰，保持热爱</p>
+      
+      <div class="my-6">
+        <a href="mailto:hi@crclare.top" class="text-[14px] text-brand-500 hover:text-brand-600 font-medium transition-colors">
+          联系我们：hi@crclare.top
+        </a>
+      </div>
+
+      <!-- 赞助入口（相对路径 /reward） -->
+      <div class="my-8">
+        <a href="/reward" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold text-[14px] hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/30">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          赞助支持 CrCLARE Studio
+        </a>
+      </div>
+
+      <div class="flex justify-center mb-6">
+        <a id="statusWrap" href="https://status.crclare.top/" target="_blank" class="status-indicator status-loading">
+          <span class="dot"></span><span class="txt">正在获取服务状态…</span>
+        </a>
+      </div>
+      
+      <!-- 合规链接（小灰字） -->
+      <div class="mt-8 pt-6 border-t border-slate-200/60 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[12px] text-slate-400">
+        <a href="/privacy" class="hover:text-slate-600 transition-colors">隐私政策</a>
+        <a href="/cookies" class="hover:text-slate-600 transition-colors">Cookie协议</a>
+        <a href="/copyright" class="hover:text-slate-600 transition-colors">版权协议</a>
+      </div>
+      
+      <p class="mt-6 text-slate-400">Made with ❤️ by CLARE-XHL</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+    // 状态灯逻辑
+    const statusWrap = document.getElementById('statusWrap');
+    const statusTextMap = { loading: '正在获取服务状态…', ok: '所有服务运行正常', partial: '部分服务存在异常', error: '服务整体不可用', fail: '状态获取失败，点击查看状态页' };
+    function setStatus(state) {
+      statusWrap.classList.remove('status-loading', 'status-ok', 'status-partial', 'status-error');
+      statusWrap.classList.add('status-' + state);
+      statusWrap.querySelector('.txt').textContent = statusTextMap[state] || statusTextMap.loading;
+    }
+    async function fetchStatus() {
+      try {
+        const res = await fetch('https://status.crclare.top/index.json');
+        if (!res.ok) throw new Error('network');
+        const data = await res.json();
+        const components = data.components || [];
+        let hasMajor = false, hasPartial = false;
+        components.forEach(c => {
+          if (c.status === 'major_outage') hasMajor = true;
+          if (c.status === 'degraded_performance' || c.status === 'partial_outage') hasPartial = true;
+        });
+        if (hasMajor) setStatus('error');
+        else if (hasPartial) setStatus('partial');
+        else setStatus('ok');
+      } catch (e) { setStatus('fail'); }
+    }
+    window.addEventListener('load', () => { fetchStatus(); setInterval(fetchStatus, 60000); });
+
+    // 打字机
+    const sentences = ['星星之火，正在燎原', 'Go for it.', '奔赴顶峰，保持热爱', '以时间为封印，行为作密钥'];
+    const typingEl = document.getElementById('typingText');
+    let sIdx = 0, cIdx = 0, deleting = false;
+    function typeLoop() {
+      const current = sentences[sIdx];
+      if (!deleting) {
+        typingEl.textContent = current.substring(0, cIdx + 1); cIdx++;
+        if (cIdx === current.length) { deleting = true; return setTimeout(typeLoop, 2000); }
+      } else {
+        typingEl.textContent = current.substring(0, cIdx - 1); cIdx--;
+        if (cIdx === 0) { deleting = false; sIdx = (sIdx + 1) % sentences.length; }
+      }
+      setTimeout(typeLoop, deleting ? 40 : 90);
+    }
+    window.addEventListener('load', () => { setTimeout(typeLoop, 400); });
+  </script>
+</body>
+</html>
