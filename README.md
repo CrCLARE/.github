@@ -26,7 +26,7 @@ This repository (`.github`) serves two purposes for **CrCLARE Studio**:
 
 ## 📂 What's Inside
 
-- `profile/README(.zh).md` — The organization profile you are reading now.
+- `profile/README(.zh).md` — The organization profile you can read.
 - `index.html` — The homepage.
 - `privacy.html` — Privacy Policy.
 - `cookies.html` — Cookie Policy.
