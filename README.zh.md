@@ -24,16 +24,6 @@
 1. **组织主页展示**：存放 `profile/README.md`，用于在组织主页展示工作室信息。
 2. **官网托管**：存放工作室官网（`crclare.top`）的静态源码，并通过 **GitHub Pages** 部署。
 
-## 📂 文件结构
-
-- `profile/README(.zh).md` — 你可以阅读的组织配置文件。
-- `index.html` — 官网首页。
-- `privacy.html` — 隐私政策。
-- `cookies.html` — Cookie 协议。
-- `copyright.html` — 版权与许可声明。
-- `reward.html` — 赞助支持页面。
-- `logo.png`、`avatar.png` — 静态资源文件。
-
 ## 🔗 快速链接
 
 - **官网**：[https://crclare.top](https://crclare.top)
