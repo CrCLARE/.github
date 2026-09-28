@@ -54,7 +54,7 @@
       border-color: rgba(59, 130, 246, 0.3);
     }
 
-    /* 头像占位与图片 */
+    /* 头像容器 */
     .avatar-wrapper {
       width: 84px;
       height: 84px;
@@ -74,11 +74,14 @@
       object-fit: cover;
       position: absolute;
       inset: 0;
+      z-index: 2;
+      background: #fff;
     }
     .avatar-fallback {
       color: #fff;
       font-weight: 700;
       font-size: 28px;
+      z-index: 1;
     }
 
     /* 招贤纳士按钮 */
@@ -101,6 +104,20 @@
       box-shadow: 0 14px 32px -8px rgba(59, 130, 246, 0.6);
       filter: brightness(1.05);
     }
+
+    /* 返回首页按钮 */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-btn:hover {
+      color: #3b82f6;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -114,7 +131,7 @@
         <img src="logo.png" alt="CrCLARE Studio Logo" class="h-7 w-auto" onerror="this.style.display='none';">
         <span>CrCLARE 工作室</span>
       </a>
-      <a href="/" class="text-[14px] font-medium text-slate-500 hover:text-brand-500 transition-colors">返回首页</a>
+      <a href="/" class="back-btn">← 返回首页</a>
     </div>
   </header>
 
@@ -131,47 +148,24 @@
       </p>
     </div>
 
-    <!-- 成员卡片网格 -->
+    <!-- 成员卡片网格（只剩 6 位核心成员） -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- CLARE（带 GitHub 链接） -->
       <a href="https://github.com/CLARE-XHL" target="_blank" class="glass-card p-8 text-center flex flex-col items-center hover:border-brand-300 transition-colors">
         <div class="avatar-wrapper">
-          <!-- 替换为自己的头像图片路径 -->
-          <img src="avatar_clare.png" alt="CLARE" onerror="this.style.display='none';">
+          <img src="avatars/clare.png" alt="CLARE" onerror="this.style.display='none';">
           <span class="avatar-fallback">C</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">CLARE</h3>
         <p class="text-[13px] text-brand-500 font-medium mt-1">创始人 · 独立开发者</p>
-        <p class="text-[14px] text-slate-500 mt-3">负责 Chronos Seal 底层架构、Tauri GUI、以及《宇宙乡·纪》的全部创作。</p>
+        <p class="text-[14px] text-slate-500 mt-3">负责 Chronos Seal 底层架构、客户端开发、以及《宇宙乡·纪》的全部创作。</p>
       </a>
-
-      <!-- Allen -->
-      <div class="glass-card p-8 text-center flex flex-col items-center">
-        <div class="avatar-wrapper">
-          <img src="avatar_allen.png" alt="Allen" onerror="this.style.display='none';">
-          <span class="avatar-fallback">A</span>
-        </div>
-        <h3 class="text-[18px] font-bold text-slate-800">Allen</h3>
-        <p class="text-[13px] text-brand-500 font-medium mt-1">核心文案编写</p>
-        <p class="text-[14px] text-slate-500 mt-3">负责核心文档、宣传文案的撰写与打磨。</p>
-      </div>
-
-      <!-- Slipknots -->
-      <div class="glass-card p-8 text-center flex flex-col items-center">
-        <div class="avatar-wrapper">
-          <img src="avatar_slipknots.png" alt="Slipknots" onerror="this.style.display='none';">
-          <span class="avatar-fallback">S</span>
-        </div>
-        <h3 class="text-[18px] font-bold text-slate-800">Slipknots</h3>
-        <p class="text-[13px] text-brand-500 font-medium mt-1">技术测试</p>
-        <p class="text-[14px] text-slate-500 mt-3">负责 Chronos Seal 各版本的兼容性测试与反馈。</p>
-      </div>
 
       <!-- 大米粥 -->
       <div class="glass-card p-8 text-center flex flex-col items-center">
         <div class="avatar-wrapper">
-          <img src="avatar_damizhou.png" alt="大米粥" onerror="this.style.display='none';">
+          <img src="avatars/damizhou.png" alt="大米粥" onerror="this.style.display='none';">
           <span class="avatar-fallback">米</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">大米粥</h3>
@@ -182,7 +176,7 @@
       <!-- 老北 -->
       <div class="glass-card p-8 text-center flex flex-col items-center">
         <div class="avatar-wrapper">
-          <img src="avatar_laobei.png" alt="老北" onerror="this.style.display='none';">
+          <img src="avatars/laobei.png" alt="老北" onerror="this.style.display='none';">
           <span class="avatar-fallback">北</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">老北</h3>
@@ -193,7 +187,7 @@
       <!-- 蝶衣 -->
       <div class="glass-card p-8 text-center flex flex-col items-center">
         <div class="avatar-wrapper">
-          <img src="avatar_dieyi.png" alt="蝶衣" onerror="this.style.display='none';">
+          <img src="avatars/dieyi.png" alt="蝶衣" onerror="this.style.display='none';">
           <span class="avatar-fallback">蝶</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">蝶衣</h3>
@@ -204,7 +198,7 @@
       <!-- 云 -->
       <div class="glass-card p-8 text-center flex flex-col items-center">
         <div class="avatar-wrapper">
-          <img src="avatar_yun.png" alt="云" onerror="this.style.display='none';">
+          <img src="avatars/yun.png" alt="云" onerror="this.style.display='none';">
           <span class="avatar-fallback">云</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">云</h3>
@@ -215,7 +209,7 @@
       <!-- rain -->
       <div class="glass-card p-8 text-center flex flex-col items-center">
         <div class="avatar-wrapper">
-          <img src="avatar_rain.png" alt="rain" onerror="this.style.display='none';">
+          <img src="avatars/rain.png" alt="rain" onerror="this.style.display='none';">
           <span class="avatar-fallback">R</span>
         </div>
         <h3 class="text-[18px] font-bold text-slate-800">rain</h3>
@@ -243,8 +237,9 @@
 
     <!-- 底部寄语 -->
     <div class="text-center mt-20">
-      <p class="text-[15px] font-semibold text-slate-800">“Create Wonderful Code, Build A Wonderful World.”</p>
-      <p class="text-[13px] text-slate-400 mt-2">—— CrCLARE Studio</p>
+      <p class="text-[18px] font-bold text-slate-800 mb-2">念念不忘，必有回响。</p>
+      <p class="text-[15px] font-semibold text-slate-700 mt-4">"Create Wonderful Code, Build A Wonderful World."</p>
+      <p class="text-[13px] text-slate-400 mt-2">—— CrCLARE Studio · Here We Go.</p>
     </div>
 
   </main>
