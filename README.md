@@ -24,16 +24,6 @@ This repository (`.github`) serves two purposes for **CrCLARE Studio**:
 1. **Organization Profile**: Hosts the `profile/README.md` shown on our organization's homepage.
 2. **Website Hosting**: Hosts the static source code for our official website (`crclare.top`), deployed directly via **GitHub Pages**.
 
-## 📂 What's Inside
-
-- `profile/README(.zh).md` — The organization profile you can read.
-- `index.html` — The homepage.
-- `privacy.html` — Privacy Policy.
-- `cookies.html` — Cookie Policy.
-- `copyright.html` — Copyright & Licensing.
-- `reward.html` — Sponsorship page.
-- `logo.png`, `avatar.png` — Static assets.
-
 ## 🔗 Quick Links
 
 - **Website**: [https://crclare.top](https://crclare.top)
